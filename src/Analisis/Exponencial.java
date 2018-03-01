@@ -5,16 +5,15 @@
  */
 package Analisis;
 
-/**
- *
- * @author Familia Quintanilla
- */
+import javax.swing.table.DefaultTableModel;
 public class Exponencial extends javax.swing.JFrame {
 
     /**
      * Creates new form Exponencial
      */
     public Exponencial() {
+    Taylorexponencial ej3 = new Taylorexponencial();
+    DefaultTableModel model1, model2;
         initComponents();
          this.setResizable(false);
         this.setLocationRelativeTo(null);

@@ -58,6 +58,11 @@ public class General extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
         btnExpon.setText("Funcion Exponencial");
+        btnExpon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExponActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnExpon, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 160, -1));
 
         btnSalir.setBackground(new java.awt.Color(0, 0, 0));
@@ -73,13 +78,13 @@ public class General extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAritmeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAritmeticaActionPerformed
-        EcuacionSegundoGrado ec= new EcuacionSegundoGrado();
+        EcuacionSegundoGrado ec = new EcuacionSegundoGrado();
         ec.show();
         this.setVisible(false);
     }//GEN-LAST:event_btnAritmeticaActionPerformed
 
     private void btnTrigonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrigonActionPerformed
-        SerieCosx sc=new SerieCosx();
+        SerieCosx sc = new SerieCosx();
         sc.show();
         this.setVisible(false);
     }//GEN-LAST:event_btnTrigonActionPerformed
@@ -87,6 +92,12 @@ public class General extends javax.swing.JFrame {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnExponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExponActionPerformed
+        Exponencial exp = new Exponencial();
+        exp.show();
+        this.setVisible(false);
+    }//GEN-LAST:event_btnExponActionPerformed
 
     /**
      * @param args the command line arguments
