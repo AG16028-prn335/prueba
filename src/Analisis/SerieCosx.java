@@ -6,7 +6,6 @@
 package Analisis;
 
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author AREVALO GONZALEZ
