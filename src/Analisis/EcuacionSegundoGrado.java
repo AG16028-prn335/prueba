@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class EcuacionSegundoGrado extends javax.swing.JFrame {
      Operaciones operacion = new Operaciones();
+     General menu = new General();
     /**
      * Creates new form EcuacionSegundoGrado
      */
@@ -235,13 +236,22 @@ txtIndependiente.setText("");
     }//GEN-LAST:event_btnNoActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        if(!txtDecimal.getText().equals("")&& Integer.parseInt(txtDecimal.getText())>15){
+        if(!txtDecimal.getText().equals("")&& Integer.parseInt(txtDecimal.getText())<15){
             double PrimeraRaiz,SegundaRaiz;
         PrimeraRaiz=operacion.RaicesMetodo1(Integer.parseInt(txtCoeCuadrado.getText()), 
                 Integer.parseInt(txtCoeLineal.getText()),Integer.parseInt(txtIndependiente.getText()),1);
         SegundaRaiz=operacion.RaicesMetodo1(Integer.parseInt(txtCoeCuadrado.getText()), 
                 Integer.parseInt(txtCoeLineal.getText()),Integer.parseInt(txtIndependiente.getText()),2);
         System.out.println(""+PrimeraRaiz);
+        System.out.println(""+SegundaRaiz);
+        if (PrimeraRaiz ==0 || SegundaRaiz==0){
+          JOptionPane.showMessageDialog(null, "Tiene Raices Imaginarias");
+          this.setVisible(false);
+          menu.setVisible(true);  
+        }else{
+            txtRaiz1.setText(""+PrimeraRaiz);
+            txtRaiz2.setText(""+SegundaRaiz);
+        }
       btnCalcular.setVisible(false);
       btnFinal.setVisible(true);
       btnNo.setVisible(false);

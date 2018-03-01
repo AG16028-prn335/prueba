@@ -1,8 +1,6 @@
 
 package Analisis;
 
-import java.math.BigDecimal;
-import java.util.function.LongToDoubleFunction;
 import javax.swing.JOptionPane;
 
 public class Operaciones {
@@ -55,30 +53,31 @@ public class Operaciones {
         return grado;
     }
     
-    String Algoritmo(double Es, double n){
+    String Algoritmo(double Es, int decima,double n){
       String res="";
         double Ea=100,resultado=0,resultAnt;
       int iteracion=0;
-      while(Ea<=Es){
+      while(Ea>Es){
          switch (iteracion){
              case 0:
-                 resultado=1;
-                 Ea=100;
+                 resultado=redondearNumero(1, decima);
                  break;
              case 1:
-                 resultAnt=resultado;
-                 resultado= resultado -(Math.pow(n, iteracion*2))/(iteracion*n);
-                 Ea= ((resultado-resultAnt)/resultado)*100;
+                 resultAnt=redondearNumero(resultado, decima);
+                 
+                 resultado= redondearNumero(resultado -(Math.pow(n, iteracion*2))/(iteracion*n), decima);
+                 
+                 Ea= redondearNumero(((resultado-resultAnt)/resultado)*100, decima);
                  break;
              default :
                  resultAnt=resultado;
                  if(iteracion%2==0){
-                     resultado= resultado+(Math.pow(n, iteracion*2))/(Factorial(iteracion*2));
+                     resultado= redondearNumero(resultado+(Math.pow(n, iteracion*2))/(Factorial(iteracion*2)), decima);
                      
                  }else{
-                     resultado= resultado-(Math.pow(n, iteracion*2))/(Factorial(iteracion*2));
+                     resultado= redondearNumero(resultado-(Math.pow(n, iteracion*2))/(Factorial(iteracion*2)), decima);
                  }
-                 Ea=((resultado-resultAnt)/resultado)*100;
+                 Ea=redondearNumero(((resultado-resultAnt)/resultado)*100, decima);
                  break;
          }
        iteracion++;   
@@ -95,11 +94,51 @@ public class Operaciones {
                 raiz= (2*c)/(-b+Math.sqrt(disc));
             }else{
                  raiz= (2*c)/(-b-Math.sqrt(disc));
-            }
+            } 
             System.out.println(""+raiz);
+            return raiz;
         }else{
-            JOptionPane.showMessageDialog(null, "Tiene Raices Imaginarias");
+            
+            return 0.0;
         }
-        return raiz;
+        
+    }
+    
+    public double redondearNumero(double numero, int cifras) {
+        boolean positivo = false;
+        double parteEntera = 0, aux;
+        int i = 0;
+
+        if (numero > 0.0) {
+            parteEntera = Math.floor(numero);
+            numero -= parteEntera;
+            positivo = true;
+        } else if (numero < 0.0) {
+            numero *= -1;
+            parteEntera = Math.floor(numero);
+            numero -= parteEntera;
+            positivo = false;
+        }
+
+        if (numero == 0.0 && positivo) {
+            return parteEntera;
+        } else if (numero == 0.0) {
+            return parteEntera * -1;
+        }
+
+        do {
+            aux = numero * Math.pow(10, cifras + i);
+            i++;
+        } while (Math.floor(aux) == 0);
+        i--;
+        numero *= Math.pow(10, cifras + i);
+        numero = Math.round(numero);
+        numero /= Math.pow(10, cifras + i);
+
+        if (positivo == true) {
+            return numero + parteEntera;
+        } else {
+            return (numero + parteEntera) * -1;
+        }
     }
 }
