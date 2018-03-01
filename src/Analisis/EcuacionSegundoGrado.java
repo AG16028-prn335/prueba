@@ -160,7 +160,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 90, -1));
+        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 90, -1));
 
         btnFinal.setText("Finalizar");
         btnFinal.setBorderPainted(false);
@@ -195,6 +195,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         txtRaizCal2.setEditable(false);
         getContentPane().add(txtRaizCal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 80, -1));
 
+        lblEa.setForeground(new java.awt.Color(255, 255, 255));
         lblEa.setText("Ea1 =");
         getContentPane().add(lblEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
@@ -203,7 +204,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
 
         lblVaReal.setForeground(new java.awt.Color(255, 255, 255));
         lblVaReal.setText("Valores reales");
-        getContentPane().add(lblVaReal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 6, 80, -1));
+        getContentPane().add(lblVaReal, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 90, -1));
 
         lblEa2.setForeground(new java.awt.Color(255, 255, 255));
         lblEa2.setText("Ea2 =");

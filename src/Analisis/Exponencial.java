@@ -60,11 +60,11 @@ public class Exponencial extends javax.swing.JFrame {
 
         lbl2.setText("Segundo Metodo");
         getContentPane().add(lbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
-        getContentPane().add(txtMetodo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 120, 30));
-        getContentPane().add(txtMetodo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 120, 30));
+        getContentPane().add(txtMetodo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 120, 30));
+        getContentPane().add(txtMetodo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 120, 30));
 
         lblfx.setText("Valor Real de f(x)=e⁻⁵");
-        getContentPane().add(lblfx, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 120, 20));
+        getContentPane().add(lblfx, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 140, 20));
 
         lbl1.setText("Primer Metodo");
         getContentPane().add(lbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
@@ -110,7 +110,9 @@ public class Exponencial extends javax.swing.JFrame {
         getContentPane().add(btnConclusion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 120, 50));
 
         txtaCon.setEditable(false);
+        txtaCon.setBackground(new java.awt.Color(0, 0, 0));
         txtaCon.setColumns(20);
+        txtaCon.setForeground(new java.awt.Color(255, 255, 255));
         txtaCon.setRows(5);
         txtaCon.setBorder(null);
         jScrollPane1.setViewportView(txtaCon);
@@ -157,7 +159,9 @@ public class Exponencial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConclusionActionPerformed
 
     private void btnFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinActionPerformed
-        System.exit(0);
+        this.setVisible(false);
+        General menu =new General();
+        menu.show();
     }//GEN-LAST:event_btnFinActionPerformed
  
     public void vista(){
