@@ -200,12 +200,9 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-       String cadena="";
         if (!txtCoeCuadrado.getText().equals("")){
           if (!txtCoeLineal.getText().equals("")){
             if (!txtIndependiente.getText().equals("")){
-            cadena=operacion.Validacion(Integer.parseInt(txtCoeCuadrado.getText()),
-                    Integer.parseInt(txtCoeLineal.getText()),Integer.parseInt(txtIndependiente.getText()));
                lblvalor.setVisible(false);
                lblfuncion.setText("Cuantos decimales?");
                txtDecimal.setVisible(true);
@@ -274,7 +271,8 @@ txtIndependiente.setText("");
             txtRaiz2.setText(""+SegundaRaiz);
             txtRaizCal1.setText(""+PrRaizCal);
             txtRaizCal2.setText(""+SgRaizCal);
-            txtEa.setText(Math.abs(((PrimeraRaiz-PrRaizCal)/PrimeraRaiz)*100)+"%");
+            System.out.println(Math.abs((PrimeraRaiz-PrRaizCal)));
+            txtEa.setText(String.format("%1$."+txtDecimal.getText()+"f", Math.abs((PrimeraRaiz-PrRaizCal)))+"%");
         }
       btnCalcular.setVisible(false);
       btnFinal.setVisible(true);

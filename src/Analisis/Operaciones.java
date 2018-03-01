@@ -3,39 +3,6 @@ package Analisis;
 
 public class Operaciones {
     
-    String Validacion(int a, int b, int c){
-        String cadena;
-        switch (a) {
-            case 1:
-                cadena="xÂ²";
-            break;
-            case -1:
-                cadena="-xÂ²";
-            break;
-            default:
-                cadena=a+"xÂ²";
-            break;
-        }
-        switch(b){
-            case 1:
-                cadena+="+ x";
-            break;
-            case -1:
-                cadena+="- x";
-            break;
-            default :
-            if(b<0){cadena+= " "+b+"x";
-            }else{cadena+= " + "+b+"x";
-            }
-            break;
-        }
-        if(c<0){cadena+= " "+c;
-        }else{cadena+= " + "+c;
-        }
-   
-        return cadena;
-    }
-    
     int Factorial(int n){
      int factorial=1,cont=1;
      while (cont<=n){
@@ -103,10 +70,12 @@ public class Operaciones {
     
     Double RaicesMedoto2(int a,int b,int c,int cont){
            double raiz=0,raiz1,raiz2,disc;
+           String dis;
         if(((b^2)-4*a*c)>=0){
             disc=((b^2)-4*a*c);
+            dis=String.format("%1$.2f", Math.sqrt(disc));
            //falta poner lo de la raiz
-           raiz=Math.sqrt(disc);
+           raiz=Double.parseDouble(dis);
            System.out.println(raiz);
            if(cont==1){
                raiz1=(-b-raiz)/(2*a);
