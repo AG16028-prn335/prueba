@@ -35,6 +35,9 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         txtRaizCal2.setVisible(false);
         txtEa.setVisible(false);
         lblEa.setVisible(false);
+        txtEa2.setVisible(false);
+        lblEa2.setVisible(false);
+        lblVaReal.setVisible(false);
     }
 
     /**
@@ -68,6 +71,9 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         txtRaizCal2 = new javax.swing.JTextField();
         lblEa = new javax.swing.JLabel();
         txtEa = new javax.swing.JTextField();
+        lblVaReal = new javax.swing.JLabel();
+        lblEa2 = new javax.swing.JLabel();
+        txtEa2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(250, 200));
@@ -103,7 +109,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
                 btnNoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 90, -1));
+        getContentPane().add(btnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 90, -1));
 
         txtCoeCuadrado.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -144,7 +150,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 90, -1));
+        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 90, -1));
 
         btnFinal.setText("Finalizar");
         btnFinal.addActionListener(new java.awt.event.ActionListener() {
@@ -155,31 +161,40 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         getContentPane().add(btnFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 90, -1));
 
         lblx1.setText("X1 =");
-        getContentPane().add(lblx1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 40, 20));
+        getContentPane().add(lblx1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 40, 20));
 
         txtRaiz1.setEditable(false);
-        getContentPane().add(txtRaiz1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 60, -1));
+        getContentPane().add(txtRaiz1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 60, -1));
 
         txtRaiz2.setEditable(false);
-        getContentPane().add(txtRaiz2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 60, -1));
+        getContentPane().add(txtRaiz2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 60, -1));
 
         lblx2.setText("X2 =");
-        getContentPane().add(lblx2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 40, 20));
+        getContentPane().add(lblx2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 40, 20));
 
         lblValorCal.setText("Valores calculados");
-        getContentPane().add(lblValorCal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
+        getContentPane().add(lblValorCal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 4, -1, 20));
 
         txtRaizCal1.setEditable(false);
-        getContentPane().add(txtRaizCal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 80, -1));
+        getContentPane().add(txtRaizCal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 80, -1));
 
         txtRaizCal2.setEditable(false);
-        getContentPane().add(txtRaizCal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 80, -1));
+        getContentPane().add(txtRaizCal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 80, -1));
 
-        lblEa.setText("Ea =");
-        getContentPane().add(lblEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
+        lblEa.setText("Ea1 =");
+        getContentPane().add(lblEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
         txtEa.setEditable(false);
-        getContentPane().add(txtEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 110, -1));
+        getContentPane().add(txtEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 110, -1));
+
+        lblVaReal.setText("Valores reales");
+        getContentPane().add(lblVaReal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 80, -1));
+
+        lblEa2.setText("Ea2 =");
+        getContentPane().add(lblEa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
+
+        txtEa2.setEditable(false);
+        getContentPane().add(txtEa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 110, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -237,13 +252,19 @@ txtIndependiente.setText("");
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         if(!txtDecimal.getText().equals("")&& Integer.parseInt(txtDecimal.getText())<15){
-            double PrimeraRaiz,SegundaRaiz;
+            double PrimeraRaiz,SegundaRaiz,PrRaizCal,SgRaizCal;
         PrimeraRaiz=operacion.RaicesMetodo1(Integer.parseInt(txtCoeCuadrado.getText()), 
                 Integer.parseInt(txtCoeLineal.getText()),Integer.parseInt(txtIndependiente.getText()),1);
         SegundaRaiz=operacion.RaicesMetodo1(Integer.parseInt(txtCoeCuadrado.getText()), 
                 Integer.parseInt(txtCoeLineal.getText()),Integer.parseInt(txtIndependiente.getText()),2);
-        System.out.println(""+PrimeraRaiz);
-        System.out.println(""+SegundaRaiz);
+        System.out.println(PrimeraRaiz);
+        System.out.println(SegundaRaiz);
+        PrRaizCal=operacion.RaicesMedoto2(Integer.parseInt(txtCoeCuadrado.getText()),
+                Integer.parseInt(txtCoeLineal.getText()),Integer.parseInt(txtIndependiente.getText()),1);
+        SgRaizCal=operacion.RaicesMedoto2(Integer.parseInt(txtCoeCuadrado.getText()),
+                Integer.parseInt(txtCoeLineal.getText()),Integer.parseInt(txtIndependiente.getText()),2);
+        System.out.println(PrRaizCal);
+        System.out.println(SgRaizCal);
         if (PrimeraRaiz ==0 || SegundaRaiz==0){
           JOptionPane.showMessageDialog(null, "Tiene Raices Imaginarias");
           this.setVisible(false);
@@ -251,14 +272,16 @@ txtIndependiente.setText("");
         }else{
             txtRaiz1.setText(""+PrimeraRaiz);
             txtRaiz2.setText(""+SegundaRaiz);
+            txtRaizCal1.setText(""+PrRaizCal);
+            txtRaizCal2.setText(""+SgRaizCal);
+            txtEa.setText(Math.abs(((PrimeraRaiz-PrRaizCal)/PrimeraRaiz)*100)+"%");
         }
       btnCalcular.setVisible(false);
       btnFinal.setVisible(true);
       btnNo.setVisible(false);
      txtDecimal.setVisible(false);
      lblfuncion.setVisible(false);
-     lblvalor.setVisible(true);
-     lblvalor.setText("Valores reales");             
+     lblVaReal.setVisible(true);
       lblx2.setVisible(true);
       lblx1.setVisible(true);
       txtRaiz1.setVisible(true);
@@ -268,6 +291,8 @@ txtIndependiente.setText("");
       txtRaizCal2.setVisible(true);
       txtEa.setVisible(true);
       lblEa.setVisible(true);
+      txtEa2.setVisible(true);
+      lblEa2.setVisible(true);
         }else{
             if(txtDecimal.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Ingrese con cuantos decimales");
@@ -356,6 +381,8 @@ txtIndependiente.setText("");
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnNo;
     private javax.swing.JLabel lblEa;
+    private javax.swing.JLabel lblEa2;
+    private javax.swing.JLabel lblVaReal;
     private javax.swing.JLabel lblValorCal;
     private javax.swing.JLabel lbla;
     private javax.swing.JLabel lblb;
@@ -368,6 +395,7 @@ txtIndependiente.setText("");
     private javax.swing.JTextField txtCoeLineal;
     private javax.swing.JTextField txtDecimal;
     private javax.swing.JTextField txtEa;
+    private javax.swing.JTextField txtEa2;
     private javax.swing.JTextField txtIndependiente;
     private javax.swing.JTextField txtRaiz1;
     private javax.swing.JTextField txtRaiz2;

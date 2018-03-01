@@ -1,21 +1,19 @@
 
 package Analisis;
 
-import javax.swing.JOptionPane;
-
 public class Operaciones {
     
     String Validacion(int a, int b, int c){
         String cadena;
         switch (a) {
             case 1:
-                cadena="x²";
+                cadena="xÂ²";
             break;
             case -1:
-                cadena="-x²";
+                cadena="-xÂ²";
             break;
             default:
-                cadena=a+"x²";
+                cadena=a+"xÂ²";
             break;
         }
         switch(b){
@@ -53,31 +51,31 @@ public class Operaciones {
         return grado;
     }
     
-    String Algoritmo(double Es, int decima,double n){
+    String Algoritmo(double Es ,double n){
       String res="";
         double Ea=100,resultado=0,resultAnt;
       int iteracion=0;
       while(Ea>Es){
          switch (iteracion){
              case 0:
-                 resultado=redondearNumero(1, decima);
+                 resultado=1;
                  break;
              case 1:
-                 resultAnt=redondearNumero(resultado, decima);
+                 resultAnt=resultado;
                  
-                 resultado= redondearNumero(resultado -(Math.pow(n, iteracion*2))/(iteracion*n), decima);
+                 resultado=resultado -(Math.pow(n, iteracion*2))/(iteracion*n);
                  
-                 Ea= redondearNumero(((resultado-resultAnt)/resultado)*100, decima);
+                 Ea=((resultado-resultAnt)/resultado)*100;
                  break;
              default :
                  resultAnt=resultado;
                  if(iteracion%2==0){
-                     resultado= redondearNumero(resultado+(Math.pow(n, iteracion*2))/(Factorial(iteracion*2)), decima);
+                     resultado= resultado+(Math.pow(n, iteracion*2))/(Factorial(iteracion*2));
                      
                  }else{
-                     resultado= redondearNumero(resultado-(Math.pow(n, iteracion*2))/(Factorial(iteracion*2)), decima);
+                     resultado=resultado-(Math.pow(n, iteracion*2))/(Factorial(iteracion*2));
                  }
-                 Ea=redondearNumero(((resultado-resultAnt)/resultado)*100, decima);
+                 Ea=((resultado-resultAnt)/resultado)*100;
                  break;
          }
        iteracion++;   
@@ -95,7 +93,6 @@ public class Operaciones {
             }else{
                  raiz= (2*c)/(-b-Math.sqrt(disc));
             } 
-            System.out.println(""+raiz);
             return raiz;
         }else{
             
@@ -104,41 +101,24 @@ public class Operaciones {
         
     }
     
-    public double redondearNumero(double numero, int cifras) {
-        boolean positivo = false;
-        double parteEntera = 0, aux;
-        int i = 0;
-
-        if (numero > 0.0) {
-            parteEntera = Math.floor(numero);
-            numero -= parteEntera;
-            positivo = true;
-        } else if (numero < 0.0) {
-            numero *= -1;
-            parteEntera = Math.floor(numero);
-            numero -= parteEntera;
-            positivo = false;
-        }
-
-        if (numero == 0.0 && positivo) {
-            return parteEntera;
-        } else if (numero == 0.0) {
-            return parteEntera * -1;
-        }
-
-        do {
-            aux = numero * Math.pow(10, cifras + i);
-            i++;
-        } while (Math.floor(aux) == 0);
-        i--;
-        numero *= Math.pow(10, cifras + i);
-        numero = Math.round(numero);
-        numero /= Math.pow(10, cifras + i);
-
-        if (positivo == true) {
-            return numero + parteEntera;
-        } else {
-            return (numero + parteEntera) * -1;
-        }
+    Double RaicesMedoto2(int a,int b,int c,int cont){
+           double raiz=0,raiz1,raiz2,disc;
+        if(((b^2)-4*a*c)>=0){
+            disc=((b^2)-4*a*c);
+           //falta poner lo de la raiz
+           raiz=Math.sqrt(disc);
+           System.out.println(raiz);
+           if(cont==1){
+               raiz1=(-b-raiz)/(2*a);
+               return raiz1;
+           }else{
+               raiz2=(-b+raiz)/(2*a);
+               return raiz2;
+           }
+        }else{
+            return 0.0;
+        }   
     }
+    
+    
 }
