@@ -164,10 +164,10 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         getContentPane().add(lblx1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 40, 20));
 
         txtRaiz1.setEditable(false);
-        getContentPane().add(txtRaiz1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 60, -1));
+        getContentPane().add(txtRaiz1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 80, -1));
 
         txtRaiz2.setEditable(false);
-        getContentPane().add(txtRaiz2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 60, -1));
+        getContentPane().add(txtRaiz2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 80, -1));
 
         lblx2.setText("X2 =");
         getContentPane().add(lblx2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 40, 20));
@@ -188,7 +188,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         getContentPane().add(txtEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 110, -1));
 
         lblVaReal.setText("Valores reales");
-        getContentPane().add(lblVaReal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 80, -1));
+        getContentPane().add(lblVaReal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 6, 80, -1));
 
         lblEa2.setText("Ea2 =");
         getContentPane().add(lblEa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
@@ -257,9 +257,9 @@ txtIndependiente.setText("");
         System.out.println(PrimeraRaiz);
         System.out.println(SegundaRaiz);
         PrRaizCal=operacion.RaicesMedoto2(Integer.parseInt(txtCoeCuadrado.getText()),
-                Integer.parseInt(txtCoeLineal.getText()),Integer.parseInt(txtIndependiente.getText()),1);
+                Integer.parseInt(txtCoeLineal.getText()),Integer.parseInt(txtIndependiente.getText()),1,Integer.parseInt(txtDecimal.getText()));
         SgRaizCal=operacion.RaicesMedoto2(Integer.parseInt(txtCoeCuadrado.getText()),
-                Integer.parseInt(txtCoeLineal.getText()),Integer.parseInt(txtIndependiente.getText()),2);
+                Integer.parseInt(txtCoeLineal.getText()),Integer.parseInt(txtIndependiente.getText()),2,Integer.parseInt(txtDecimal.getText()));
         System.out.println(PrRaizCal);
         System.out.println(SgRaizCal);
         if (PrimeraRaiz ==0 || SegundaRaiz==0){
@@ -267,12 +267,13 @@ txtIndependiente.setText("");
           this.setVisible(false);
           menu.setVisible(true);  
         }else{
-            txtRaiz1.setText(""+PrimeraRaiz);
-            txtRaiz2.setText(""+SegundaRaiz);
+            txtRaiz1.setText(String.format("%1$."+txtDecimal.getText()+"f", PrimeraRaiz));
+            txtRaiz2.setText(String.format("%1$."+txtDecimal.getText()+"f", SegundaRaiz));
             txtRaizCal1.setText(""+PrRaizCal);
             txtRaizCal2.setText(""+SgRaizCal);
             System.out.println(Math.abs((PrimeraRaiz-PrRaizCal)));
-            txtEa.setText(String.format("%1$."+txtDecimal.getText()+"f", Math.abs((PrimeraRaiz-PrRaizCal)))+"%");
+            txtEa.setText(String.format("%1$.2f", Math.abs((PrimeraRaiz-PrRaizCal)))+"%");
+            txtEa2.setText(String.format("%1$.2f", Math.abs((SegundaRaiz-SgRaizCal)))+"%");
         }
       btnCalcular.setVisible(false);
       btnFinal.setVisible(true);

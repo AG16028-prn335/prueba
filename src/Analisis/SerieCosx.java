@@ -109,8 +109,8 @@ public class SerieCosx extends javax.swing.JFrame {
             if(!txtDecimal.getText().equals("")){
                 System.out.println(txtVariable.getText());
                 txtValorReal.setText(""+Math.cos(Math.toRadians(Double.parseDouble(txtVariable.getText()))));                
-               // txtValorCalculado.setText(op.Algoritmo(op.GradoLib(Integer.parseInt(txtDecimal.getText())),
-                 //       Integer.parseInt(txtDecimal.getText()),Math.toRadians(Double.parseDouble(txtVariable.getText()))));
+                txtValorCalculado.setText(op.Algoritmo(op.GradoLib(Integer.parseInt(txtDecimal.getText())),
+                  Integer.parseInt(txtDecimal.getText()),Math.toRadians(Double.parseDouble(txtVariable.getText()))));
                 txtValorCalculado.setVisible(true);
                 txtValorReal.setVisible(true);
                 lblVaReal.setVisible(true);
