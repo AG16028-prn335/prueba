@@ -8,7 +8,6 @@ public class Operaciones {
      while (cont<=n){
          factorial*=cont;
          cont++;
-         System.out.println("Factorial "+factorial);
      }     
      return factorial;
     } 
@@ -16,12 +15,10 @@ public class Operaciones {
     Double GradoLib(int n){
         double grado;
         grado=0.5* Math.pow(10,2- n);
-        System.out.println("Grado "+grado);
         return grado;
     }
     
-    String Algoritmo(double Es ,int decimal,double n){
-      String res="";
+    Double Algoritmo(double Es ,int decimal,double n,int cont){
         double Ea=100,resultado=0,resultAnt;
       int iteracion=0;
       while(Math.abs(Ea)>Es){
@@ -50,11 +47,12 @@ public class Operaciones {
          }
        iteracion++;   
       }
-        System.out.println("Resultado " + resultado);
-        System.out.println("Error "+Ea);
-        System.out.println("iteracion "+iteracion);
-      res+=resultado;
-      return res;
+     
+    if(cont==1){
+        return resultado;
+    }else{
+        return Ea;
+    }
   }
     Double RaicesMetodo1(int a,int b,int c,int cont){
         double raiz=0,disc;

@@ -22,7 +22,10 @@ public class SerieCosx extends javax.swing.JFrame {
         lblVaCalcu.setVisible(false);
         lblVaReal.setVisible(false);
         txtValorCalculado.setVisible(false);
+        btnFin.setVisible(false);
         txtValorReal.setVisible(false);
+        lblEa.setVisible(false);
+        txtEa.setVisible(false);
     }
 
     /**
@@ -44,6 +47,9 @@ public class SerieCosx extends javax.swing.JFrame {
         lblVaReal = new javax.swing.JLabel();
         lblVaCalcu = new javax.swing.JLabel();
         txtValorCalculado = new javax.swing.JTextField();
+        btnFin = new javax.swing.JButton();
+        lblEa = new javax.swing.JLabel();
+        txtEa = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -87,6 +93,18 @@ public class SerieCosx extends javax.swing.JFrame {
         getContentPane().add(lblVaCalcu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 90, -1));
         getContentPane().add(txtValorCalculado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 80, -1));
 
+        btnFin.setText("Finalizar");
+        btnFin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFinActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 90, 30));
+
+        lblEa.setText("Ea =");
+        getContentPane().add(lblEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
+        getContentPane().add(txtEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 130, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -109,8 +127,7 @@ public class SerieCosx extends javax.swing.JFrame {
             if(!txtDecimal.getText().equals("")){
                 System.out.println(txtVariable.getText());
                 txtValorReal.setText(""+Math.cos(Math.toRadians(Double.parseDouble(txtVariable.getText()))));                
-                txtValorCalculado.setText(op.Algoritmo(op.GradoLib(Integer.parseInt(txtDecimal.getText())),
-                  Integer.parseInt(txtDecimal.getText()),Math.toRadians(Double.parseDouble(txtVariable.getText()))));
+                txtValorCalculado.setText(""+op.Algoritmo(op.GradoLib(Integer.parseInt(txtDecimal.getText())),Integer.parseInt(txtDecimal.getText()),Math.toRadians(Double.parseDouble(txtVariable.getText())),1));
                 txtValorCalculado.setVisible(true);
                 txtValorReal.setVisible(true);
                 lblVaReal.setVisible(true);
@@ -121,6 +138,11 @@ public class SerieCosx extends javax.swing.JFrame {
                 lblFx.setVisible(false);
                 lblCifras.setVisible(false);
                 lblVariable.setVisible(false);
+                btnCalcular.setVisible(false);
+                btnFin.setVisible(true);
+                lblEa.setVisible(true);
+                txtEa.setVisible(true);
+                txtEa.setText(String.format("%1$.2f", op.Algoritmo(op.GradoLib(Integer.parseInt(txtDecimal.getText())),Integer.parseInt(txtDecimal.getText()),Math.toRadians(Double.parseDouble(txtVariable.getText())),2))+"%");
             }else{
               JOptionPane.showMessageDialog(null,"ingresa un valor para las cifras significativas");
               txtDecimal.setRequestFocusEnabled(true);   
@@ -135,6 +157,10 @@ public class SerieCosx extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void btnFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnFinActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,12 +199,15 @@ public class SerieCosx extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnFin;
     private javax.swing.JLabel lblCifras;
+    private javax.swing.JLabel lblEa;
     private javax.swing.JLabel lblFx;
     private javax.swing.JLabel lblVaCalcu;
     private javax.swing.JLabel lblVaReal;
     private javax.swing.JLabel lblVariable;
     private javax.swing.JTextField txtDecimal;
+    private javax.swing.JTextField txtEa;
     private javax.swing.JTextField txtValorCalculado;
     private javax.swing.JTextField txtValorReal;
     private javax.swing.JTextField txtVariable;
