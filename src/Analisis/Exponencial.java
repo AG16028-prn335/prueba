@@ -14,6 +14,7 @@ public class Exponencial extends javax.swing.JFrame {
     public Exponencial() {
     Taylorexponencial ej3 = new Taylorexponencial();
     DefaultTableModel model1, model2;
+    setTitle("Análisis Numérico");
         initComponents();
          this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -49,6 +50,7 @@ public class Exponencial extends javax.swing.JFrame {
         btnConclusion = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtaCon = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -113,7 +115,10 @@ public class Exponencial extends javax.swing.JFrame {
         txtaCon.setBorder(null);
         jScrollPane1.setViewportView(txtaCon);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 390, 210));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 390, 210));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/fondo-negro.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 430, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -205,6 +210,7 @@ public class Exponencial extends javax.swing.JFrame {
     private javax.swing.JButton btnCalc;
     private javax.swing.JButton btnConclusion;
     private javax.swing.JButton btnFin;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;

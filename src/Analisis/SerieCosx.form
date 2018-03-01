@@ -27,6 +27,9 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblFx">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Sea f(x) = cos(x) "/>
       </Properties>
       <Constraints>
@@ -37,11 +40,14 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblVariable">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="sabiendo que el valor de x es en grados que valor le darias?"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="40" width="-1" height="-1"/>
+          <AbsoluteConstraints x="60" y="40" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -58,6 +64,7 @@
     <Component class="javax.swing.JButton" name="btnCalcular">
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular f(x)"/>
+        <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalcularActionPerformed"/>
@@ -70,6 +77,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblCifras">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Con cuantas cifras significativas?"/>
       </Properties>
       <Constraints>
@@ -97,6 +107,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblVaReal">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Valor Real "/>
       </Properties>
       <Constraints>
@@ -107,6 +120,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblVaCalcu">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Valor Calculado"/>
       </Properties>
       <Constraints>
@@ -125,6 +141,7 @@
     <Component class="javax.swing.JButton" name="btnFin">
       <Properties>
         <Property name="text" type="java.lang.String" value="Finalizar"/>
+        <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFinActionPerformed"/>
@@ -137,6 +154,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblEa">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Ea ="/>
       </Properties>
       <Constraints>
@@ -149,6 +169,18 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="140" y="110" width="130" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imag/fondo-negro.jpg"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="0" y="0" width="410" height="300"/>
         </Constraint>
       </Constraints>
     </Component>

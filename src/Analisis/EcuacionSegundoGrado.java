@@ -20,6 +20,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
     
     public EcuacionSegundoGrado() {
         initComponents();
+        setTitle("Análisis Numérico");
         btnNo.setVisible(false);
         txtDecimal.setVisible(false);
         btnCalcular.setVisible(false);
@@ -74,28 +75,35 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         lblVaReal = new javax.swing.JLabel();
         lblEa2 = new javax.swing.JLabel();
         txtEa2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(250, 200));
         setName("EcuacionCuadratica"); // NOI18N
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblfuncion.setForeground(new java.awt.Color(255, 255, 255));
         lblfuncion.setText("Sea una ecuacion de tipo ax²+bx +c ");
         getContentPane().add(lblfuncion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
+        lblvalor.setForeground(new java.awt.Color(255, 255, 255));
         lblvalor.setText("que valor les darias a los coeficientes ?");
         getContentPane().add(lblvalor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
 
+        lblc.setForeground(new java.awt.Color(255, 255, 255));
         lblc.setText("c:");
         getContentPane().add(lblc, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
+        lbla.setForeground(new java.awt.Color(255, 255, 255));
         lbla.setText("a:");
         getContentPane().add(lbla, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
+        lblb.setForeground(new java.awt.Color(255, 255, 255));
         lblb.setText("b:");
         getContentPane().add(lblb, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
 
         btnNext.setText("Listo");
+        btnNext.setBorderPainted(false);
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNextActionPerformed(evt);
@@ -104,6 +112,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         getContentPane().add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 70, 20));
 
         btnNo.setText("Cancelar");
+        btnNo.setBorderPainted(false);
         btnNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNoActionPerformed(evt);
@@ -145,6 +154,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         getContentPane().add(txtDecimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 70, -1));
 
         btnCalcular.setText("Calcular ");
+        btnCalcular.setBorderPainted(false);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalcularActionPerformed(evt);
@@ -153,6 +163,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 90, -1));
 
         btnFinal.setText("Finalizar");
+        btnFinal.setBorderPainted(false);
         btnFinal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFinalActionPerformed(evt);
@@ -160,6 +171,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         });
         getContentPane().add(btnFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 90, -1));
 
+        lblx1.setForeground(new java.awt.Color(255, 255, 255));
         lblx1.setText("X1 =");
         getContentPane().add(lblx1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 40, 20));
 
@@ -169,9 +181,11 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         txtRaiz2.setEditable(false);
         getContentPane().add(txtRaiz2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 80, -1));
 
+        lblx2.setForeground(new java.awt.Color(255, 255, 255));
         lblx2.setText("X2 =");
         getContentPane().add(lblx2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 40, 20));
 
+        lblValorCal.setForeground(new java.awt.Color(255, 255, 255));
         lblValorCal.setText("Valores calculados");
         getContentPane().add(lblValorCal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 4, -1, 20));
 
@@ -187,14 +201,19 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         txtEa.setEditable(false);
         getContentPane().add(txtEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 110, -1));
 
+        lblVaReal.setForeground(new java.awt.Color(255, 255, 255));
         lblVaReal.setText("Valores reales");
         getContentPane().add(lblVaReal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 6, 80, -1));
 
+        lblEa2.setForeground(new java.awt.Color(255, 255, 255));
         lblEa2.setText("Ea2 =");
         getContentPane().add(lblEa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
 
         txtEa2.setEditable(false);
         getContentPane().add(txtEa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 110, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/fondo-negro.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 320, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -379,6 +398,7 @@ txtIndependiente.setText("");
     private javax.swing.JButton btnFinal;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnNo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblEa;
     private javax.swing.JLabel lblEa2;
     private javax.swing.JLabel lblVaReal;

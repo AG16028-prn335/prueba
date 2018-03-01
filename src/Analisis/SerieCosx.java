@@ -17,6 +17,7 @@ public class SerieCosx extends javax.swing.JFrame {
      */
     public SerieCosx() {
         initComponents();
+        setTitle("Análisis Numérico");
         this.setLocationRelativeTo(null);
         setResizable(false);
         lblVaCalcu.setVisible(false);
@@ -50,15 +51,18 @@ public class SerieCosx extends javax.swing.JFrame {
         btnFin = new javax.swing.JButton();
         lblEa = new javax.swing.JLabel();
         txtEa = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblFx.setForeground(new java.awt.Color(255, 255, 255));
         lblFx.setText("Sea f(x) = cos(x) ");
         getContentPane().add(lblFx, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
+        lblVariable.setForeground(new java.awt.Color(255, 255, 255));
         lblVariable.setText("sabiendo que el valor de x es en grados que valor le darias?");
-        getContentPane().add(lblVariable, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        getContentPane().add(lblVariable, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
         txtVariable.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -68,6 +72,7 @@ public class SerieCosx extends javax.swing.JFrame {
         getContentPane().add(txtVariable, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 50, -1));
 
         btnCalcular.setText("Calcular f(x)");
+        btnCalcular.setBorderPainted(false);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalcularActionPerformed(evt);
@@ -75,6 +80,7 @@ public class SerieCosx extends javax.swing.JFrame {
         });
         getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
 
+        lblCifras.setForeground(new java.awt.Color(255, 255, 255));
         lblCifras.setText("Con cuantas cifras significativas?");
         getContentPane().add(lblCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
 
@@ -86,14 +92,17 @@ public class SerieCosx extends javax.swing.JFrame {
         getContentPane().add(txtDecimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 50, -1));
         getContentPane().add(txtValorReal, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 90, -1));
 
+        lblVaReal.setForeground(new java.awt.Color(255, 255, 255));
         lblVaReal.setText("Valor Real ");
         getContentPane().add(lblVaReal, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
+        lblVaCalcu.setForeground(new java.awt.Color(255, 255, 255));
         lblVaCalcu.setText("Valor Calculado");
         getContentPane().add(lblVaCalcu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 90, -1));
         getContentPane().add(txtValorCalculado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 80, -1));
 
         btnFin.setText("Finalizar");
+        btnFin.setBorderPainted(false);
         btnFin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFinActionPerformed(evt);
@@ -101,9 +110,13 @@ public class SerieCosx extends javax.swing.JFrame {
         });
         getContentPane().add(btnFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 90, 30));
 
+        lblEa.setForeground(new java.awt.Color(255, 255, 255));
         lblEa.setText("Ea =");
         getContentPane().add(lblEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
         getContentPane().add(txtEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 130, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/fondo-negro.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -200,6 +213,7 @@ public class SerieCosx extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnFin;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCifras;
     private javax.swing.JLabel lblEa;
     private javax.swing.JLabel lblFx;

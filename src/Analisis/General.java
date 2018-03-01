@@ -5,6 +5,8 @@
  */
 package Analisis;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author AREVALO GONZALEZ
@@ -29,50 +31,79 @@ public class General extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         btnAritmetica = new javax.swing.JButton();
         btnTrigon = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnExpon = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+
+        jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnAritmetica.setForeground(new java.awt.Color(51, 51, 51));
         btnAritmetica.setText("Funcion Aritmetica");
+        btnAritmetica.setBorderPainted(false);
         btnAritmetica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAritmeticaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAritmetica, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
+        getContentPane().add(btnAritmetica, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
+        btnTrigon.setForeground(new java.awt.Color(51, 51, 51));
         btnTrigon.setText("Funcion Trigonometrica");
+        btnTrigon.setBorderPainted(false);
         btnTrigon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTrigonActionPerformed(evt);
             }
         });
-        getContentPane().add(btnTrigon, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
+        getContentPane().add(btnTrigon, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
 
-        jLabel1.setText("Solucion a los ejercicios propuestos ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("AREVALO GONZALES, RONAL BALMORE          AG16001");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
+        btnExpon.setForeground(new java.awt.Color(51, 51, 51));
         btnExpon.setText("Funcion Exponencial");
+        btnExpon.setBorderPainted(false);
         btnExpon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExponActionPerformed(evt);
             }
         });
-        getContentPane().add(btnExpon, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 160, -1));
+        getContentPane().add(btnExpon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 160, -1));
 
         btnSalir.setBackground(new java.awt.Color(0, 0, 0));
-        btnSalir.setText("X");
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/_active__no.png"))); // NOI18N
+        btnSalir.setContentAreaFilled(false);
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 50, 20));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 40, 40));
+
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("MAGAÑA QUINTANILLA, JACQUELINE ANDREA MQ16001");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/fondo-negro.jpg"))); // NOI18N
+        jLabel3.setMaximumSize(new java.awt.Dimension(200, 200));
+        jLabel3.setMinimumSize(new java.awt.Dimension(200, 200));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -125,6 +156,7 @@ public class General extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(General.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -140,5 +172,9 @@ public class General extends javax.swing.JFrame {
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnTrigon;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
