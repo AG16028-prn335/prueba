@@ -14,13 +14,15 @@ import javax.swing.JOptionPane;
 public class EcuacionSegundoGrado extends javax.swing.JFrame {
      Operaciones operacion = new Operaciones();
      General menu = new General();
+     
     /**
      * Creates new form EcuacionSegundoGrado
      */
     
     public EcuacionSegundoGrado() {
         initComponents();
-        setTitle("Cuadrática");
+        this.setTitle("Cuadrática");
+        this.setExtendedState(ICONIFIED);
         btnNo.setVisible(false);
         txtDecimal.setVisible(false);
         btnCalcular.setVisible(false);
@@ -122,7 +124,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
                 btnNoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 90, 20));
+        getContentPane().add(btnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 90, -1));
 
         txtCoeCuadrado.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -166,7 +168,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 90, 20));
+        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 90, -1));
 
         btnFinal.setForeground(new java.awt.Color(255, 255, 255));
         btnFinal.setText("Finalizar");
@@ -221,7 +223,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         getContentPane().add(txtEa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 110, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/fondo-negro.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 320, 270));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 270, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -391,6 +393,7 @@ txtIndependiente.setText("");
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(EcuacionSegundoGrado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

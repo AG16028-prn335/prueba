@@ -18,6 +18,7 @@ public class SerieCosx extends javax.swing.JFrame {
     public SerieCosx() {
         initComponents();
         setTitle("Coseno");
+        this.setExtendedState(ICONIFIED);
         this.setLocationRelativeTo(null);
         setResizable(false);
         lblVaCalcu.setVisible(false);
@@ -176,7 +177,9 @@ public class SerieCosx extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void btnFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinActionPerformed
-        System.exit(0);
+        this.setVisible(false);
+        General menu =new General();
+        menu.show();
     }//GEN-LAST:event_btnFinActionPerformed
 
     /**
