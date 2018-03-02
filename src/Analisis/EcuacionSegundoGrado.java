@@ -168,7 +168,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 90, -1));
+        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 90, -1));
 
         btnFinal.setForeground(new java.awt.Color(255, 255, 255));
         btnFinal.setText("Finalizar");
@@ -205,6 +205,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         txtRaizCal2.setEditable(false);
         getContentPane().add(txtRaizCal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 80, -1));
 
+        lblEa.setForeground(new java.awt.Color(255, 255, 255));
         lblEa.setText("Ea1 =");
         getContentPane().add(lblEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
@@ -363,9 +364,8 @@ txtIndependiente.setText("");
     }//GEN-LAST:event_txtDecimalActionPerformed
 
     private void btnFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalActionPerformed
-        General menu =new General();
-        menu.show();
         this.setVisible(false);
+        menu.setVisible(true);
     }//GEN-LAST:event_btnFinalActionPerformed
 
     /**

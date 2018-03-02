@@ -5,15 +5,12 @@
  */
 package Analisis;
 
-import javax.swing.table.DefaultTableModel;
 public class Exponencial extends javax.swing.JFrame {
-
+Taylorexponencial ej = new Taylorexponencial();
     /**
      * Creates new form Exponencial
      */
     public Exponencial() {
-    Taylorexponencial ej3 = new Taylorexponencial();
-    DefaultTableModel model1, model2;
     setTitle("Exponencial");
         initComponents();
         this.setExtendedState(ICONIFIED);
@@ -22,7 +19,7 @@ public class Exponencial extends javax.swing.JFrame {
         txtValorReal.setEditable(false);
         vista();
         btnFin.setVisible(false);
-        txtaCon.setVisible(false);
+        txtValorReal.setText(""+Math.exp(-5));
     }
 
     /**
@@ -49,8 +46,6 @@ public class Exponencial extends javax.swing.JFrame {
         txtEa1 = new javax.swing.JTextField();
         txtEa2 = new javax.swing.JTextField();
         btnConclusion = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtaCon = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,16 +55,19 @@ public class Exponencial extends javax.swing.JFrame {
         lbla.setText("Ingrese la cantidad de cifras significativas");
         getContentPane().add(lbla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 232, 25));
 
+        lbl2.setForeground(new java.awt.Color(255, 255, 255));
         lbl2.setText("Segundo Metodo");
         getContentPane().add(lbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
         getContentPane().add(txtMetodo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 120, 30));
         getContentPane().add(txtMetodo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 120, 30));
 
+        lblfx.setForeground(new java.awt.Color(255, 255, 255));
         lblfx.setText("Valor Real de f(x)=e⁻⁵");
         getContentPane().add(lblfx, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 140, 20));
 
+        lbl1.setForeground(new java.awt.Color(255, 255, 255));
         lbl1.setText("Primer Metodo");
-        getContentPane().add(lbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+        getContentPane().add(lbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         btnCalc.setForeground(new java.awt.Color(255, 255, 255));
         btnCalc.setText("Calcular con los metodos");
@@ -80,7 +78,7 @@ public class Exponencial extends javax.swing.JFrame {
                 btnCalcActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 210, 30));
+        getContentPane().add(btnCalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 210, 30));
         getContentPane().add(txtValorReal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 190, -1));
 
         txtCifras.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -101,9 +99,11 @@ public class Exponencial extends javax.swing.JFrame {
         });
         getContentPane().add(btnFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 120, 40));
 
+        lblEa.setForeground(new java.awt.Color(255, 255, 255));
         lblEa.setText("Ea");
         getContentPane().add(lblEa, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, -1, -1));
 
+        lblEa1.setForeground(new java.awt.Color(255, 255, 255));
         lblEa1.setText("Ea");
         getContentPane().add(lblEa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
         getContentPane().add(txtEa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 140, -1));
@@ -119,16 +119,6 @@ public class Exponencial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnConclusion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 120, 50));
-
-        txtaCon.setEditable(false);
-        txtaCon.setBackground(new java.awt.Color(0, 0, 0));
-        txtaCon.setColumns(20);
-        txtaCon.setForeground(new java.awt.Color(255, 255, 255));
-        txtaCon.setRows(5);
-        txtaCon.setBorder(null);
-        jScrollPane1.setViewportView(txtaCon);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 390, 210));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/fondo-negro.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 430, 330));
@@ -146,7 +136,11 @@ public class Exponencial extends javax.swing.JFrame {
     private void btnCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcActionPerformed
         if(!txtCifras.getText().equals("")){
             txtMetodo1.setVisible(true);
+            txtMetodo1.setText(""+ej.taylor1(Integer.parseInt(txtCifras.getText()),1));
+            txtEa1.setText(""+ej.taylor1(Integer.parseInt(txtCifras.getText()),2));
             txtMetodo2.setVisible(true);
+            txtMetodo2.setText(""+ej.taylor2(Integer.parseInt(txtCifras.getText()),1));
+            txtEa2.setText(""+ej.taylor2(Integer.parseInt(txtCifras.getText()),2));
             lbl1.setVisible(true);
             lbl2.setVisible(true);
             btnConclusion.setVisible(true);
@@ -165,8 +159,6 @@ public class Exponencial extends javax.swing.JFrame {
     lblfx.setVisible(false);
     txtCifras.setVisible(false);
     txtValorReal.setVisible(false);
-    txtaCon.setVisible(true);
-    txtaCon.setText("hola");
     }//GEN-LAST:event_btnConclusionActionPerformed
 
     private void btnFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinActionPerformed
@@ -226,7 +218,6 @@ public class Exponencial extends javax.swing.JFrame {
     private javax.swing.JButton btnConclusion;
     private javax.swing.JButton btnFin;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
     private javax.swing.JLabel lblEa;
@@ -239,6 +230,5 @@ public class Exponencial extends javax.swing.JFrame {
     private javax.swing.JTextField txtMetodo1;
     private javax.swing.JTextField txtMetodo2;
     private javax.swing.JTextField txtValorReal;
-    private javax.swing.JTextArea txtaCon;
     // End of variables declaration//GEN-END:variables
 }
