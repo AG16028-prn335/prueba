@@ -49,6 +49,8 @@ Taylorexponencial ej = new Taylorexponencial();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbla.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,7 +123,7 @@ Taylorexponencial ej = new Taylorexponencial();
         getContentPane().add(btnConclusion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 120, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/fondo-negro.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 430, 330));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 440, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

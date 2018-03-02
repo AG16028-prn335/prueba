@@ -82,6 +82,8 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(250, 200));
         setName("EcuacionCuadratica"); // NOI18N
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblfuncion.setForeground(new java.awt.Color(255, 255, 255));
@@ -224,7 +226,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         getContentPane().add(txtEa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 110, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/fondo-negro.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 270, 250));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 270, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
