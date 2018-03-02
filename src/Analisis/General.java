@@ -5,6 +5,8 @@
  */
 package Analisis;
 
+import javax.swing.ImageIcon;
+
 
 
 /**
@@ -45,6 +47,8 @@ public class General extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAritmetica.setBackground(new java.awt.Color(51, 51, 51));
@@ -74,7 +78,7 @@ public class General extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("AREVALO GONZALES, RONAL BALMORE          AG16001");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         btnExpon.setForeground(new java.awt.Color(255, 255, 255));
         btnExpon.setText("Funcion Exponencial");
@@ -101,12 +105,13 @@ public class General extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("MAGAÑA QUINTANILLA, JACQUELINE ANDREA MQ16001");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/fondo-negro.jpg"))); // NOI18N
         jLabel3.setMaximumSize(new java.awt.Dimension(200, 200));
         jLabel3.setMinimumSize(new java.awt.Dimension(200, 200));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 410, 250));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 430, 280));
+        jLabel3.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
