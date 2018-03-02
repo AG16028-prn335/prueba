@@ -17,7 +17,7 @@ public class SerieCosx extends javax.swing.JFrame {
      */
     public SerieCosx() {
         initComponents();
-        setTitle("Análisis Numérico");
+        setTitle("Coseno");
         this.setLocationRelativeTo(null);
         setResizable(false);
         lblVaCalcu.setVisible(false);
@@ -71,14 +71,16 @@ public class SerieCosx extends javax.swing.JFrame {
         });
         getContentPane().add(txtVariable, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 50, -1));
 
+        btnCalcular.setForeground(new java.awt.Color(255, 255, 255));
         btnCalcular.setText("Calcular f(x)");
-        btnCalcular.setBorderPainted(false);
+        btnCalcular.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        btnCalcular.setContentAreaFilled(false);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
+        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 90, 30));
 
         lblCifras.setForeground(new java.awt.Color(255, 255, 255));
         lblCifras.setText("Con cuantas cifras significativas?");
@@ -101,8 +103,10 @@ public class SerieCosx extends javax.swing.JFrame {
         getContentPane().add(lblVaCalcu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 90, -1));
         getContentPane().add(txtValorCalculado, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 80, -1));
 
+        btnFin.setForeground(new java.awt.Color(255, 255, 255));
         btnFin.setText("Finalizar");
-        btnFin.setBorderPainted(false);
+        btnFin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        btnFin.setContentAreaFilled(false);
         btnFin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFinActionPerformed(evt);

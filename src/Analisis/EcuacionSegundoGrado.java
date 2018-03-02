@@ -20,7 +20,7 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
     
     public EcuacionSegundoGrado() {
         initComponents();
-        setTitle("Análisis Numérico");
+        setTitle("Cuadrática");
         btnNo.setVisible(false);
         txtDecimal.setVisible(false);
         btnCalcular.setVisible(false);
@@ -102,8 +102,10 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         lblb.setText("b:");
         getContentPane().add(lblb, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
 
+        btnNext.setForeground(new java.awt.Color(255, 255, 255));
         btnNext.setText("Listo");
-        btnNext.setBorderPainted(false);
+        btnNext.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        btnNext.setContentAreaFilled(false);
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNextActionPerformed(evt);
@@ -111,14 +113,16 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         });
         getContentPane().add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 70, 20));
 
+        btnNo.setForeground(new java.awt.Color(255, 255, 255));
         btnNo.setText("Cancelar");
-        btnNo.setBorderPainted(false);
+        btnNo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        btnNo.setContentAreaFilled(false);
         btnNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 90, -1));
+        getContentPane().add(btnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 90, 20));
 
         txtCoeCuadrado.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -153,17 +157,21 @@ public class EcuacionSegundoGrado extends javax.swing.JFrame {
         });
         getContentPane().add(txtDecimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 70, -1));
 
+        btnCalcular.setForeground(new java.awt.Color(255, 255, 255));
         btnCalcular.setText("Calcular ");
-        btnCalcular.setBorderPainted(false);
+        btnCalcular.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        btnCalcular.setContentAreaFilled(false);
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 90, -1));
+        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 90, 20));
 
+        btnFinal.setForeground(new java.awt.Color(255, 255, 255));
         btnFinal.setText("Finalizar");
-        btnFinal.setBorderPainted(false);
+        btnFinal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        btnFinal.setContentAreaFilled(false);
         btnFinal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFinalActionPerformed(evt);

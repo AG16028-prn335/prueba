@@ -14,7 +14,7 @@ public class Exponencial extends javax.swing.JFrame {
     public Exponencial() {
     Taylorexponencial ej3 = new Taylorexponencial();
     DefaultTableModel model1, model2;
-    setTitle("Análisis Numérico");
+    setTitle("Exponencial");
         initComponents();
          this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -55,6 +55,7 @@ public class Exponencial extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lbla.setForeground(new java.awt.Color(255, 255, 255));
         lbla.setText("Ingrese la cantidad de cifras significativas");
         getContentPane().add(lbla, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 232, 25));
 
@@ -69,7 +70,10 @@ public class Exponencial extends javax.swing.JFrame {
         lbl1.setText("Primer Metodo");
         getContentPane().add(lbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
+        btnCalc.setForeground(new java.awt.Color(255, 255, 255));
         btnCalc.setText("Calcular con los metodos");
+        btnCalc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        btnCalc.setContentAreaFilled(false);
         btnCalc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalcActionPerformed(evt);
@@ -85,7 +89,10 @@ public class Exponencial extends javax.swing.JFrame {
         });
         getContentPane().add(txtCifras, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 60, 30));
 
+        btnFin.setForeground(new java.awt.Color(255, 255, 255));
         btnFin.setText("finalizar");
+        btnFin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        btnFin.setContentAreaFilled(false);
         btnFin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFinActionPerformed(evt);
@@ -101,7 +108,10 @@ public class Exponencial extends javax.swing.JFrame {
         getContentPane().add(txtEa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 140, -1));
         getContentPane().add(txtEa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 140, -1));
 
+        btnConclusion.setForeground(new java.awt.Color(255, 255, 255));
         btnConclusion.setText("Concluisones");
+        btnConclusion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        btnConclusion.setContentAreaFilled(false);
         btnConclusion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConclusionActionPerformed(evt);
@@ -115,7 +125,7 @@ public class Exponencial extends javax.swing.JFrame {
         txtaCon.setBorder(null);
         jScrollPane1.setViewportView(txtaCon);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 390, 210));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 390, 210));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/fondo-negro.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 430, 330));
