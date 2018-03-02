@@ -5,6 +5,8 @@
  */
 package Analisis;
 
+import javax.swing.JOptionPane;
+
 public class Exponencial extends javax.swing.JFrame {
 Taylorexponencial ej = new Taylorexponencial();
     /**
@@ -20,6 +22,7 @@ Taylorexponencial ej = new Taylorexponencial();
         vista();
         btnFin.setVisible(false);
         txtValorReal.setText(""+Math.exp(-5));
+        lblCon.setVisible(false);
     }
 
     /**
@@ -31,6 +34,7 @@ Taylorexponencial ej = new Taylorexponencial();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         lbla = new javax.swing.JLabel();
         lbl2 = new javax.swing.JLabel();
         txtMetodo1 = new javax.swing.JTextField();
@@ -46,7 +50,10 @@ Taylorexponencial ej = new Taylorexponencial();
         txtEa1 = new javax.swing.JTextField();
         txtEa2 = new javax.swing.JTextField();
         btnConclusion = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblCon = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -122,8 +129,11 @@ Taylorexponencial ej = new Taylorexponencial();
         });
         getContentPane().add(btnConclusion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 120, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/fondo-negro.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 440, 330));
+        lblCon.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(lblCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 370, 160));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/fondo-negro.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -139,10 +149,10 @@ Taylorexponencial ej = new Taylorexponencial();
         if(!txtCifras.getText().equals("")){
             txtMetodo1.setVisible(true);
             txtMetodo1.setText(""+ej.taylor1(Integer.parseInt(txtCifras.getText()),1));
-            txtEa1.setText(""+ej.taylor1(Integer.parseInt(txtCifras.getText()),2));
+            txtEa1.setText(String.format("%1$.2f", ej.taylor1(Integer.parseInt(txtCifras.getText()),2))+"%");
             txtMetodo2.setVisible(true);
             txtMetodo2.setText(""+ej.taylor2(Integer.parseInt(txtCifras.getText()),1));
-            txtEa2.setText(""+ej.taylor2(Integer.parseInt(txtCifras.getText()),2));
+            txtEa2.setText(String.format("%1$.2f", ej.taylor2(Integer.parseInt(txtCifras.getText()),2))+"%");
             lbl1.setVisible(true);
             lbl2.setVisible(true);
             btnConclusion.setVisible(true);
@@ -151,6 +161,9 @@ Taylorexponencial ej = new Taylorexponencial();
         lblEa1.setVisible(true);
         txtEa1.setVisible(true);
         txtEa2.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null,"Ingresar cuantas cifras desea");
+            txtCifras.requestFocus();
         }
     }//GEN-LAST:event_btnCalcActionPerformed
 
@@ -161,6 +174,8 @@ Taylorexponencial ej = new Taylorexponencial();
     lblfx.setVisible(false);
     txtCifras.setVisible(false);
     txtValorReal.setVisible(false);
+    lblCon.setText("el metodo 1 es mejor que el 2 por que el error es minimo");
+    lblCon.setVisible(true);
     }//GEN-LAST:event_btnConclusionActionPerformed
 
     private void btnFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinActionPerformed
@@ -220,8 +235,10 @@ Taylorexponencial ej = new Taylorexponencial();
     private javax.swing.JButton btnConclusion;
     private javax.swing.JButton btnFin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
+    private javax.swing.JLabel lblCon;
     private javax.swing.JLabel lblEa;
     private javax.swing.JLabel lblEa1;
     private javax.swing.JLabel lbla;
